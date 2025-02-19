@@ -145,18 +145,6 @@ function save_module_course_relationship($post_id) {
 add_action('save_post', 'save_module_course_relationship');
 
 add_action('graphql_register_types', function() {
-    register_graphql_object_type('Course', [
-        'description' => 'A course',
-        'fields' => [
-            'title' => [
-                'type' => 'String',
-                'resolve' => function($course) {
-                    return get_the_title($course->ID);
-                }
-            ]
-        ]
-    ]);
-
     register_graphql_field('Post', 'relatedCourse', [
         'type' => 'Course', // Course post type
         'resolve' => function($module) {
