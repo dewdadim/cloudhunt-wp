@@ -8,7 +8,7 @@ Author: Nadim Hairi
 
 define('CLOUDHUNT_BASE_URL', 'https://dev.cloudhunt.guru/courses');
 
-include_once('addons/course.php');
+include_once('addons/course.php')
 include_once('addons/module.php');
 
 add_filter('graphql_connection_max_query_amount', function (int $max_amount, $source, array $args, $context, $info) {
