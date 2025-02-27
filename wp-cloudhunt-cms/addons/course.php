@@ -89,9 +89,8 @@ function save_course($post_id) {
         return;
     }
 
-    if (isset($_POST['course'])) {
-        update_post_meta($post_id, '_related_course', sanitize_text_field($_POST['course']));
-
+    // Check if the course description is set and save it
+    if (isset($_POST['course_description'])) {
         $description = sanitize_textarea_field($_POST['course_description'] ?? '');
         update_post_meta($post_id, '_course_description', $description);
     }
